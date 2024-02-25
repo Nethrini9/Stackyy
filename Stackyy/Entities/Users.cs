@@ -13,8 +13,8 @@ namespace Stackyy.Entities
         public string? Email { get; set; }
         public string? Password { get; set; }
         public Profile? UserProfile { get; set; }
-        public DateTime JoiningDate { get; set; }
-        public DateTime LastSeen { get; set; }
+        public DateTime? JoiningDate { get; set; }
+        public DateTime? LastSeen { get; set; }
         public string? Location { get; set; }
     }
 

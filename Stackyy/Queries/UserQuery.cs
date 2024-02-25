@@ -28,5 +28,9 @@ namespace Stackyy.Queries
         {
             return _repository.GetUserById(id);
         }
+        public string Signin(Users user) 
+        {
+            return _repository.Signin(user); 
+        } 
     }
 }

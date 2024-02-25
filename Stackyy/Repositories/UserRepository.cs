@@ -64,5 +64,24 @@ namespace Stackyy.Repositories
             var result = _usersCollection.DeleteOne(x => x.UserId == id);
             return result.DeletedCount > 0;
         }
+        public string Signin(Users user)
+        {
+            var userdetails = _usersCollection.Find(x => x.UserId == user.UserId).FirstOrDefault();
+            if(userdetails!=null)
+            {
+                if(userdetails.Name?.ToLower()==user.Name?.ToLower() && userdetails.Password==user.Password)
+                {
+                    return "Logged in successfully";
+                }
+                else
+                {
+                    return "Logged in failed";
+                }
+            }
+            else
+            {
+                return "No user exist";
+            }
+        }
     }
 }
