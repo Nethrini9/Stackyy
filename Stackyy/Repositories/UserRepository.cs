@@ -66,10 +66,10 @@ namespace Stackyy.Repositories
         }
         public string Signin(Users user)
         {
-            var userdetails = _usersCollection.Find(x => x.UserId == user.UserId).FirstOrDefault();
+            var userdetails = _usersCollection.Find(x => x.Email!.ToLower() == user.Email!.ToLower()).FirstOrDefault();
             if(userdetails!=null)
             {
-                if(userdetails.Name?.ToLower()==user.Name?.ToLower() && userdetails.Password==user.Password)
+                if(userdetails.Password==user.Password)
                 {
                     return "Logged in successfully";
                 }
